@@ -16,22 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Rust update
-      run: rustup update
-    - name: sudo apt-get update
-      run: sudo apt-get update
-    - name: sudo apt-get install libssl-dev libudev-dev pkg-config zlib1g-dev llvm clang make
-      run: sudo apt-get install libssl-dev libudev-dev pkg-config zlib1g-dev llvm clang make
-    - name: Add profile release
-      run: echo [profile.release] >> Cargo.toml
-    - name: Add lto = true
-      run: echo lto = true >> Cargo.toml
-    - name: cat cargo.toml
-      run: cat Cargo.toml
-    - name: Build
-      run: cargo build --release
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v2.3.1
-      with:
-        name: artifacts
-        path: target/release/
+    - name: first
+      run: ./scripts/cargo-install-all.sh .
+    - name: second
+      run: export PATH=$PWD/bin:$PATH
+    
