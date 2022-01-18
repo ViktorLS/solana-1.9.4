@@ -31,7 +31,6 @@ jobs:
     - name: Build
       run:  | 
          chmod +x ./scripts/cargo-install-all.sh 
-         chmod +x ./fetch-perf-libs.sh
          ./scripts/cargo-install-all.sh --validator-only .
       shell: bash
     - name: Upload a Build Artifact
