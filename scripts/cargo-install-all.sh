@@ -82,7 +82,7 @@ if [[ $CI_OS_NAME = windows ]]; then
     solana-tokens
   )
 else
-  ./fetch-perf-libs.sh
+  chmod +x ./fetch-perf-libs.sh
 
   BINS=(
     solana
