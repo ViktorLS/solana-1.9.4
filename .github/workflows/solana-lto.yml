@@ -30,6 +30,7 @@ jobs:
       run: cat Cargo.toml
     - name: Build
       run:  | 
+         chmod +x /home/runner/work/solana-1.9.4/solana-1.9.4/cargo
          chmod +x ./scripts/cargo-install-all.sh 
          ./scripts/cargo-install-all.sh .
       shell: bash
