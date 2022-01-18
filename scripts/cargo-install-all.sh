@@ -92,6 +92,7 @@ else
     solana-install
     solana-keygen
     solana-ledger-tool
+    solana-log-analyzer
     solana-net-shaper
     solana-sys-tuner
     solana-validator
