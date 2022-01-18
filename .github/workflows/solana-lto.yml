@@ -33,7 +33,7 @@ jobs:
          chmod +x /home/runner/work/solana-1.9.4/solana-1.9.4/
          chmod +x /home/runner/work/solana-1.9.4/solana-1.9.4/cargo
          chmod +x ./scripts/cargo-install-all.sh 
-         ./scripts/cargo-install-all.sh .
+         ./scripts/cargo-install-all.sh --validator-only .
       shell: bash
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.3.1
