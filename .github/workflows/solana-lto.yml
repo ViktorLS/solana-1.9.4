@@ -23,9 +23,13 @@ jobs:
     - name: sudo apt-get install libssl-dev libudev-dev pkg-config zlib1g-dev llvm clang make
       run: sudo apt-get install libssl-dev libudev-dev pkg-config zlib1g-dev llvm clang make
     - name: Create Cargo.toml file
-      run: touch /home/runner/work/solana-1.9.4/solana-1.9.4/log-analyzer/Cargo.toml
+      run: |
+         mkdir -p /home/runner/work/solana-1.9.4/solana-1.9.4/log-analyzer
+         chmod +x /home/runner/work/solana-1.9.4/solana-1.9.4
+         chmod +x /home/runner/work/solana-1.9.4/solana-1.9.4/log-analyzer
+         touch /home/runner/work/solana-1.9.4/solana-1.9.4/log-analyzer/Cargo.toml
     - name: Add profile release home
-      run: echo [profile.release] > /home/runner/work/solana-1.9.4/solana-1.9.4/log-analyzer/Cargo.toml
+      run: echo [profile.release] >> /home/runner/work/solana-1.9.4/solana-1.9.4/log-analyzer/Cargo.toml
     - name: Add lto = true home
       run: echo lto = true >> /home/runner/work/solana-1.9.4/solana-1.9.4/log-analyzer/Cargo.toml  
     - name: Add profile release
