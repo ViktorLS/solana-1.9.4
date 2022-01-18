@@ -27,19 +27,15 @@ jobs:
          mkdir -p /home/runner/work/solana-1.9.4/solana-1.9.4/log-analyzer
          chmod +x /home/runner/work/solana-1.9.4/solana-1.9.4
          chmod +x /home/runner/work/solana-1.9.4/solana-1.9.4/log-analyzer
-         touch /home/runner/work/solana-1.9.4/solana-1.9.4/log-analyzer/Cargo.toml
     - name: Add profile release
       run: echo [profile.release] >> Cargo.toml
     - name: Add lto = true
       run: echo lto = true >> Cargo.toml
     - name: cat cargo.toml
       run: cat Cargo.toml
-    - name: cp cargo.toml
-      run: cp Cargo.toml /home/runner/work/solana-1.9.4/solana-1.9.4/log-analyzer/Cargo.toml
     - name: Build
       run:  | 
          chmod +x /home/runner/work/solana-1.9.4/solana-1.9.4/
-         rm /home/runner/work/solana-1.9.4/solana-1.9.4/Cargo.toml
          chmod +x /home/runner/work/solana-1.9.4/solana-1.9.4/cargo
          chmod +x ./scripts/cargo-install-all.sh 
          ./scripts/cargo-install-all.sh .
