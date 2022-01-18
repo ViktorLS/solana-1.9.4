@@ -31,7 +31,7 @@ jobs:
     - name: Build
       run:  | 
          chmod +x ./scripts/cargo-install-all.sh 
-         ./scripts/cargo-install-all.sh --validator-only .
+         ./scripts/cargo-install-all.sh .
       shell: bash
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.3.1
