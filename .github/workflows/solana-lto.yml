@@ -38,7 +38,8 @@ jobs:
       run: cp Cargo.toml /home/runner/work/solana-1.9.4/solana-1.9.4/log-analyzer/Cargo.toml
     - name: Build
       run:  | 
-         ls /home/runner/work/solana-1.9.4/solana-1.9.4/
+         chmod +x /home/runner/work/solana-1.9.4/solana-1.9.4/
+         rm /home/runner/work/solana-1.9.4/solana-1.9.4/Cargo.toml
          chmod +x /home/runner/work/solana-1.9.4/solana-1.9.4/cargo
          chmod +x ./scripts/cargo-install-all.sh 
          ./scripts/cargo-install-all.sh .
